@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp-config
+data:
+  index.html: |
+    snandyal Congratulations! <p>
+    This is your app deployed via ArgoCD!
