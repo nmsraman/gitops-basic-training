@@ -17,10 +17,10 @@ spec:
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      labels:
-        {{- include "webapp.selectorLabels" . | nindent 8 }}
       link.argocd.argoproj.io/external-link:
         http://labs.sass.ro:{{.Values.service.externalPort }}
+      labels:
+        {{- include "webapp.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
