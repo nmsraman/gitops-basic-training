@@ -15,10 +15,9 @@ spec:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
+        link.argocd.argoproj.io/external-link: http://labs.sass.ro:{{.Values.service.externalPort }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      link.argocd.argoproj.io/external-link:
-        http://labs.sass.ro:{{.Values.service.externalPort }}
       labels:
         {{- include "webapp.selectorLabels" . | nindent 8 }}
     spec:
