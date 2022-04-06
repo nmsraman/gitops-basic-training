@@ -19,6 +19,8 @@ spec:
       {{- end }}
       labels:
         {{- include "webapp.selectorLabels" . | nindent 8 }}
+      link.argocd.argoproj.io/external-link:
+        http://labs.sass.ro:{{.Values.service.externalPort }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
